@@ -1,0 +1,1 @@
+web: gunicorn Tintosh.wsgi --log-file -
