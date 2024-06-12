@@ -29,10 +29,10 @@ class Person(SingletonModel):
     happy_customer = models.IntegerField(null=True)
     coffee_cup = models.IntegerField(null=True)
     website = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='portfolio/media/portfolio/images/')
-    image1 = models.ImageField(upload_to='portfolio/media/portfolio/images/')
-    image2 = models.ImageField(upload_to='portfolio/media/portfolio/images/')
-    document = models.FileField(upload_to='portfolio/media/portfolio/documents/')
+    image = models.ImageField(upload_to='portfolio/images/')
+    image1 = models.ImageField(upload_to='portfolio/images/')
+    image2 = models.ImageField(upload_to='portfolio/images/')
+    document = models.FileField(upload_to='portfolio/documents/')
 
     def __str__(self):
         return self.name
@@ -60,7 +60,7 @@ class Skills(models.Model):
 class Projects(models.Model):
     title = models.CharField(max_length=200)
     type = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='portfolio/media/portfolio/images/')
+    image = models.ImageField(upload_to='portfolio/images/')
 
     def __str__(self):
         return self.title
