@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
+import dj_database_url
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -74,22 +76,22 @@ WSGI_APPLICATION = 'Tintosh.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': 'abc123ameer',
-        'HOST': 'localhost',
-        'PORT':'5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'portfolio',
+#         'USER': 'postgres',
+#         'PASSWORD': 'abc123ameer',
+#         'HOST': 'localhost',
+#         'PORT':'5432'
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -129,6 +131,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
+django_heroku.settings(locals())
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
