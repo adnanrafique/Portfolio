@@ -1,0 +1,12 @@
+db.sqlite3
+/env/
+/.env
+/venv
+*.pyc
+_pycache_/
+data_input/
+.idea/
+.env
+.DS_Store
+o365_token.txt
+portfolio/migrations/__pycache__/*
